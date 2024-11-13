@@ -3,6 +3,8 @@ dist/
 # generated types
 .astro/
 
+publish.md
+
 push-posts.sh
 
 # dependencies
