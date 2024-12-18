@@ -4,7 +4,7 @@ import '../styles/katex.css'
 
 import { SITE } from '@/consts'
 import { ViewTransitions } from 'astro:transitions'
-
+import { GoogleAnalytics } from 'astro-analytics';
 interface Props {
   title: string
   description: string
@@ -85,3 +85,5 @@ const { title, description, image = '/static/twitter-card.png' } = Astro.props
     setDarkMode(ev.newDocument)
   })
 </script>
+<GoogleAnalytics id="G-X2WEV4C049" />
+
