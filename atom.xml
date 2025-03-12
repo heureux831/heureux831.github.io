@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Duffy</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-12-03T02:26:23.077Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Kai</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>all you need is all you need</title>
+    <link href="http://example.com/2024/12/01/transformer/"/>
+    <id>http://example.com/2024/12/01/transformer/</id>
+    <published>2024-11-30T16:00:00.000Z</published>
+    <updated>2024-12-03T02:26:23.077Z</updated>
+    
+    
+    <summary type="html">你需要的就是你需要的，让我们看看什么是transformer吧</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="nlp" scheme="http://example.com/tags/nlp/"/>
+    
+    <category term="transformer" scheme="http://example.com/tags/transformer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hugging face 抱抱脸</title>
+    <link href="http://example.com/2024/11/28/huggingface/"/>
+    <id>http://example.com/2024/11/28/huggingface/</id>
+    <published>2024-11-27T16:00:00.000Z</published>
+    <updated>2024-12-26T07:37:43.102Z</updated>
+    
+    
+    <summary type="html">关于hugging face的工具和使用</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="LLM" scheme="http://example.com/tags/LLM/"/>
+    
+    <category term="huggingface" scheme="http://example.com/tags/huggingface/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>力扣Hot100</title>
+    <link href="http://example.com/2024/11/13/hot100/"/>
+    <id>http://example.com/2024/11/13/hot100/</id>
+    <published>2024-11-12T16:00:00.000Z</published>
+    <updated>2024-11-25T09:14:04.532Z</updated>
+    
+    
+    <summary type="html">力扣hot100的笔记</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="duffy" scheme="http://example.com/tags/duffy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LoRA微调</title>
+    <link href="http://example.com/2024/11/11/Low-Rank-Adaptation/"/>
+    <id>http://example.com/2024/11/11/Low-Rank-Adaptation/</id>
+    <published>2024-11-10T16:00:00.000Z</published>
+    <updated>2025-03-12T18:44:06.715Z</updated>
+    
+    
+    <summary type="html">LoRA微调是什么？如何进行？</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="LLM" scheme="http://example.com/tags/LLM/"/>
+    
+    <category term="finetuning" scheme="http://example.com/tags/finetuning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dive-into-git</title>
+    <link href="http://example.com/2024/11/11/dive-into-git/"/>
+    <id>http://example.com/2024/11/11/dive-into-git/</id>
+    <published>2024-11-10T16:00:00.000Z</published>
+    <updated>2024-11-11T12:14:56.589Z</updated>
+    
+    
+    <summary type="html">怎么使用git？不仅限于简单使用</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="dummy" scheme="http://example.com/tags/dummy/"/>
+    
+    <category term="placeholder" scheme="http://example.com/tags/placeholder/"/>
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个小小的spring boot入门</title>
+    <link href="http://example.com/2024/11/05/spring-boot-intro/"/>
+    <id>http://example.com/2024/11/05/spring-boot-intro/</id>
+    <published>2024-11-04T16:00:00.000Z</published>
+    <updated>2024-11-13T15:57:25.459Z</updated>
+    
+    
+    <summary type="html">还得是java，让我们来从头认识一下springboot吧，从头开始了解spring boot以及相关内容。</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>静态博客</title>
+    <link href="http://example.com/2024/06/01/staticsites/"/>
+    <id>http://example.com/2024/06/01/staticsites/</id>
+    <published>2024-05-31T16:00:00.000Z</published>
+    <updated>2024-11-11T17:01:06.570Z</updated>
+    
+    
+    <summary type="html">如何构建静态博客</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="dummy" scheme="http://example.com/tags/dummy/"/>
+    
+    <category term="placeholder" scheme="http://example.com/tags/placeholder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2024 Post</title>
+    <link href="http://example.com/2024/06/01/index/"/>
+    <id>http://example.com/2024/06/01/index/</id>
+    <published>2024-05-31T16:00:00.000Z</published>
+    <updated>2024-11-13T15:31:40.475Z</updated>
+    
+    
+    <summary type="html">This a dummy post written in the year 2024 (with multiple authors).</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="dummy" scheme="http://example.com/tags/dummy/"/>
+    
+    <category term="placeholder" scheme="http://example.com/tags/placeholder/"/>
+    
+  </entry>
+  
+</feed>

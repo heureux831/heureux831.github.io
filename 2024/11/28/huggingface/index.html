@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>hugging face 抱抱脸 · Duffy</title><meta name="description" content="什么是hugging face？🤔如何使用？🔧hugging face模型下载
+首先安装相关库
+
+pip install -U huggingface_hub
+
+
+然后编写一个python文件，如下
+123456789101112131415161718192021222324252627282"><meta name="og:description" content="什么是hugging face？🤔如何使用？🔧hugging face模型下载
+首先安装相关库
+
+pip install -U huggingface_hub
+
+
+然后编写一个python文件，如下
+123456789101112131415161718192021222324252627282"><meta name="twitter:site" content="Duffy"><meta name="twitter:title" content="hugging face 抱抱脸"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">Keep going</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">思考｜记录</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/tags">Tags</a></li><li><a href="/about/about.html"></a></li><li><a href="/about/index.html">about</a></li><li><a href="/about/heureux.html"></a></li><li class="soc"><a href="https://github.com/heureux831" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="http://example.com/atom.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2025&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">Kai</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>hugging face 抱抱脸</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-11-28</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/LLM/" title="LLM">LLM</a><span>&nbsp;</span><a class="a-tag" href="/tags/huggingface/" title="huggingface">huggingface</a><span>&nbsp;</span></span></p><p class="post-abstract"><h2 id="什么是hugging-face？🤔"><a href="#什么是hugging-face？🤔" class="headerlink" title="什么是hugging face？🤔"></a>什么是hugging face？🤔</h2><h2 id="如何使用？🔧"><a href="#如何使用？🔧" class="headerlink" title="如何使用？🔧"></a>如何使用？🔧</h2><h3 id="hugging-face模型下载"><a href="#hugging-face模型下载" class="headerlink" title="hugging face模型下载"></a>hugging face模型下载</h3><blockquote>
+<p>首先安装相关库</p>
+<blockquote>
+<p><code>pip install -U huggingface_hub</code></p>
+</blockquote>
+</blockquote>
+<p>然后编写一个python文件，如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置环境变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">&quot;HF_ENDPOINT&quot;</span>] = <span class="string">&quot;https://hf-mirror.com&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> huggingface_hub <span class="keyword">import</span> hf_hub_download</span><br><span class="line"></span><br><span class="line"><span class="comment"># 举例</span></span><br><span class="line">repo_id = <span class="string">&quot;Duffy/Llama-820m&quot;</span></span><br><span class="line"></span><br><span class="line">file_list = [</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;.gitattributes&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;README.md&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;config.json&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;generation_config.json&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;xxx.py&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;pytorch_model.bin&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;special_tokens_map.json&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;tokenizer.json&quot;</span>,</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;tokenizer_config.json&quot;</span>,</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">local_dir = <span class="string">&quot;./your_model_file_dir&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file_name <span class="keyword">in</span> file_list:</span><br><span class="line"></span><br><span class="line">hf_hub_download(repo_id=repo_id, filename=file_name, local_dir=local_dir)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Hugging-Face-Hub"><a href="#Hugging-Face-Hub" class="headerlink" title="Hugging Face Hub"></a>Hugging Face Hub</h2><p>Hugging Face Hub 是一个集成模型、数据集、和其他机器学习资源的平台，它使得分享和使用模型变得非常方便。Hub 提供了易于使用的 API、GitHub 风格的模型管理，并且是目前许多 NLP 和计算机视觉任务中最流行的模型资源。</p>
+<p>可以通过访问 <a target="_blank" rel="noopener" href="https://huggingface.co/models">Hugging Face Hub</a> 页面浏览大量的预训练模型。这些模型可以按任务类别、框架（例如 TensorFlow、PyTorch）和领域（如 NLP、计算机视觉）进行筛选。</p>
+<p>每个模型都有详细的文档README file，描述模型的用途、性能和限制。</p>
+<p>Hugging Face 提供了 transformers 库，通过简单的几行代码，你可以轻松加载和使用预训练模型。</p>
+<p>使用 AutoModelForXxx 和 AutoTokenizer 来加载适合你任务的模型和对应的 tokenizer。</p>
+<p>如果我希望加载一个文本分类模型（如 BERT）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> AutoModelForSequenceClassification, AutoTokenizer</span><br><span class="line"></span><br><span class="line">model = AutoModelForSequenceClassification.from_pretrained(<span class="string">&quot;bert-base-uncased&quot;</span>)</span><br><span class="line">tokenizer = AutoTokenizer.from_pretrained(<span class="string">&quot;bert-base-uncased&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这两行代码会自动从 Hugging Face Hub 下载 <code>bert-base-uncased </code>模型及其对应的 tokenizer，并准备好进行后续推理或微调。<br>如果存在网络问题，我们可以下载模型到本地，然后把模型id换为模型地址。</p>
+<h5 id="上传自己的模型"><a href="#上传自己的模型" class="headerlink" title="上传自己的模型"></a>上传自己的模型</h5><p>如果你训练了自己的模型，并希望将其上传到 Hugging Face Hub，与他人共享或用于在线推理，可以使用 Hugging Face 的 CLI 工具。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  先安装 Hugging Face CLI 工具：</span></span><br><span class="line">pip install huggingface_hub</span><br><span class="line"><span class="comment"># 然后登录 Hugging Face：</span></span><br><span class="line">huggingface-cli login</span><br><span class="line"><span class="comment"># 需要提供 Hugging Face 账户的 token，登录后即可上传模型。</span></span><br><span class="line"><span class="comment"># 上传模型的方法：</span></span><br><span class="line">huggingface-cli upload ./path_to_model</span><br></pre></td></tr></table></figure>
+<p>这样，你可以把自己训练的模型上传到 Hugging Face Hub，其他用户也能下载并使用。</p>
+<h5 id="创建和管理模型库"><a href="#创建和管理模型库" class="headerlink" title="创建和管理模型库"></a>创建和管理模型库</h5><p>• Hugging Face Hub 不仅仅是一个模型仓库，它也支持模型版本管理，你可以对上传的模型进行版本管理和更新。</p>
+<p>• 每次上传新版本的模型时，Hugging Face 会为你自动保存版本，允许你方便地回退到之前的版本。</p>
+<h4 id="Transformers-库"><a href="#Transformers-库" class="headerlink" title="Transformers 库"></a>Transformers 库</h4><p>transformers 是 Hugging Face 提供的一个重要库，它涵盖了很多自然语言处理（NLP）模型的实现，并提供了简洁的 API 来加载、微调和使用这些模型。这个库支持多种任务，如文本生成、分类、情感分析、翻译、命名实体识别等。</p>
+<h5 id="加载预训练模型"><a href="#加载预训练模型" class="headerlink" title="加载预训练模型"></a>加载预训练模型</h5><p>transformers 库的核心特性之一是通过 AutoModel 和 AutoTokenizer 类，轻松加载预训练模型和对应的 tokenizer。AutoModel 是一个通用类，它会根据你指定的模型名称自动加载合适的模型。</p>
+<p><strong>使用方法</strong>：</p>
+<p>• 假设你想加载一个用于文本分类的 BERT 模型：</p>
+<p>from transformers import AutoModelForSequenceClassification, AutoTokenizer</p>
+<p>model_name &#x3D; “bert-base-uncased”  <em># 这里是模型的名称</em></p>
+<p>model &#x3D; AutoModelForSequenceClassification.from_pretrained(model_name)</p>
+<p>tokenizer &#x3D; AutoTokenizer.from_pretrained(model_name)</p>
+<p>• AutoModelForSequenceClassification 会根据模型名称下载适合文本分类任务的模型结构。</p>
+<p>• AutoTokenizer 会加载适配模型的 tokenizer（分词器），并准备好对输入文本进行编码。</p>
+<p><strong>2.2 进行推理（Inference）</strong></p>
+<p>推理过程是指将一个输入传入模型，得到模型的输出。transformers 库提供了非常简便的接口来进行推理。</p>
+<p><strong>步骤</strong>：</p>
+<p>• 假设你想使用 BERT 进行情感分析：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> transformers <span class="keyword">import</span> AutoModelForSequenceClassification, AutoTokenizer</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">model = AutoModelForSequenceClassification.from_pretrained(<span class="string">&quot;bert-base-uncased&quot;</span>)</span><br><span class="line"></span><br><span class="line">tokenizer = AutoTokenizer.from_pretrained(<span class="string">&quot;bert-base-uncased&quot;</span>)</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 编码输入文本</span></span><br><span class="line"></span><br><span class="line">inputs = tokenizer(<span class="string">&quot;I love Hugging Face!&quot;</span>, return_tensors=<span class="string">&quot;pt&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推理</span></span><br><span class="line"><span class="keyword">with</span> torch.no_grad():</span><br><span class="line"></span><br><span class="line">    logits = model(**inputs).logits</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">_<span class="comment"># 获取预测结果_</span></span><br><span class="line"></span><br><span class="line">predicted_class = logits.argmax().item()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Predicted class: <span class="subst">&#123;predicted_class&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>• 在这段代码中，我们首先通过 tokenizer 编码了输入文本 I love Hugging Face!，然后将其传递给模型进行推理，最后从模型输出中获取预测的类标签。</p>
+<p><strong>2.3 Fine-tuning（微调）</strong></p>
+<p>微调是指将预训练模型根据自己的任务和数据进行进一步训练。在 transformers 中，微调过程可以通过 Trainer API 简化。Trainer 提供了很多功能，包括训练过程管理、评估、日志记录等。</p>
+<p><strong>步骤</strong>：</p>
+<p>• 假设你有一个分类任务数据集，你可以使用 Trainer 来微调 BERT 模型：</p>
+<p>from transformers import Trainer, TrainingArguments</p>
+<p><em># 设置训练参数</em></p>
+<p>training_args &#x3D; TrainingArguments(</p>
+<p>    output_dir&#x3D;”.&#x2F;results”,          <em># 模型输出文件夹</em></p>
+<p>    evaluation_strategy&#x3D;”epoch”,     <em># 每个 epoch 后评估</em></p>
+<p>    per_device_train_batch_size&#x3D;8,   <em># 每个设备的训练批次大小</em></p>
+<p>    per_device_eval_batch_size&#x3D;8,    <em># 每个设备的评估批次大小</em></p>
+<p>    logging_dir&#x3D;”.&#x2F;logs”,            <em># 日志文件夹</em></p>
+<p>)</p>
+<p>trainer &#x3D; Trainer(</p>
+<p>    model&#x3D;model,                       <em># 你的模型</em></p>
+<p>    args&#x3D;training_args,                <em># 训练参数</em></p>
+<p>    train_dataset&#x3D;train_dataset,       <em># 训练数据集</em></p>
+<p>    eval_dataset&#x3D;eval_dataset,         <em># 验证数据集</em></p>
+<p>)</p>
+<p>trainer.train()</p>
+<p>• 在这个代码中，Trainer 会管理整个训练过程，包括从数据加载到模型训练，并在每个 epoch 后进行评估。你只需要指定训练参数和数据集。</p>
+<p>好的！我们继续深入介绍 Hugging Face 的其他主要功能，包括 <strong>Datasets 库</strong>、<strong>Tokenizers 库</strong>、<strong>Inference API</strong> 等。</p>
+<p><strong>3. Datasets 库</strong></p>
+<p>Hugging Face 的 datasets 库提供了一个简洁的接口来访问和处理各种公共数据集，帮助开发者快速加载和使用数据集进行训练和评估。这个库包括了许多常用的 NLP 数据集，比如 GLUE、SQuAD、IMDB 等，也支持用户上传自己的数据集。</p>
+<p><strong>3.1 加载公共数据集</strong></p>
+<p>你可以通过 load_dataset 函数直接加载 Hugging Face Hub 上的各种数据集。这个库支持很多格式的数据集，比如 CSV、JSON、文本文件等，也支持根据任务进行预处理。</p>
+<p><strong>使用方法</strong>：</p>
+<p>• 假设你要加载 IMDB 数据集：</p>
+<p>from datasets import load_dataset</p>
+<p>dataset &#x3D; load_dataset(“imdb”)</p>
+<p>print(dataset)</p>
+<p>这段代码会自动从 Hugging Face Hub 下载并加载 IMDB 数据集。load_dataset 会返回一个字典对象，包含了训练集、验证集等不同的分区。</p>
+<p>• 你可以查看数据集的内容：</p>
+<p>print(dataset[‘train’][0])  <em># 查看训练集的第一个样本</em></p>
+<p><strong>3.2 加载自定义数据集</strong></p>
+<p>如果你有自己的数据集，比如 CSV 文件，可以通过 Dataset 类将其转换为 Hugging Face 格式，以便于处理和使用。</p>
+<p><strong>使用方法</strong>：</p>
+<p>• 假设你有一个包含文本和标签的 CSV 文件，你可以将其加载为 Hugging Face 数据集：</p>
+<p>from datasets import Dataset</p>
+<p>import pandas as pd</p>
+<p><em># 加载 CSV 文件为 pandas DataFrame</em></p>
+<p>df &#x3D; pd.read_csv(“your_dataset.csv”)</p>
+<p><em># 将 DataFrame 转换为 Hugging Face Dataset 格式</em></p>
+<p>dataset &#x3D; Dataset.from_pandas(df)</p>
+<p>print(dataset)</p>
+<p>• 如果你的数据集是存储在 JSON 文件中，也可以通过类似的方法加载：</p>
+<p>dataset &#x3D; load_dataset(“json”, data_files&#x3D;”your_dataset.json”)</p>
+<p><strong>3.3 数据集操作</strong></p>
+<p>Hugging Face 的 datasets 库支持对数据集进行各种操作，如筛选、拆分、批处理等。</p>
+<p>• <strong>数据集拆分</strong>：</p>
+<p>如果你希望将数据集划分为训练集、验证集和测试集，可以使用 train_test_split 方法：</p>
+<p>dataset &#x3D; load_dataset(“imdb”)</p>
+<p>train_test &#x3D; dataset[“train”].train_test_split(test_size&#x3D;0.2)</p>
+<p>print(train_test)</p>
+<p>• <strong>过滤数据</strong>：</p>
+<p>如果你想基于特定条件筛选数据集中的样本：</p>
+<p>dataset_filtered &#x3D; dataset.filter(lambda example: example[‘label’] &#x3D;&#x3D; 1)</p>
+<p>print(dataset_filtered)</p>
+<p>• <strong>映射函数</strong>：</p>
+<p>你可以对数据集进行预处理操作，比如文本清洗或分词：</p>
+<p>def preprocess_function(examples):</p>
+<p>    return tokenizer(examples[“text”], padding&#x3D;”max_length”, truncation&#x3D;True)</p>
+<p>dataset &#x3D; dataset.map(preprocess_function, batched&#x3D;True)</p>
+<p><strong>3.4 保存和共享数据集</strong></p>
+<p>你可以将处理好的数据集保存为本地文件，并上传到 Hugging Face Hub 进行分享。</p>
+<p><strong>保存为 CSV 文件</strong>：</p>
+<p>dataset.to_csv(“processed_dataset.csv”)</p>
+<p><strong>上传到 Hugging Face Hub</strong>：</p>
+<p>• 在 Hugging Face Hub 上创建一个新的数据集页面并上传自己的数据集。</p>
+<p><strong>4. Tokenizers 库</strong></p>
+<p>Hugging Face 的 tokenizers 库是一个高效的工具，用于处理文本的分词和编码。它支持各种分词方法，如 BPE（Byte Pair Encoding）、WordPiece、SentencePiece 等，可以帮助你高效地处理文本数据。</p>
+<p><strong>4.1 加载和使用 Tokenizer</strong></p>
+<p>Hugging Face 提供了多种预训练的 tokenizer，你可以使用 AutoTokenizer 类来加载适配不同模型的分词器。</p>
+<p><strong>使用方法</strong>：</p>
+<p>• 假设你想使用 BERT 模型的 tokenizer：</p>
+<p>from transformers import AutoTokenizer</p>
+<p>tokenizer &#x3D; AutoTokenizer.from_pretrained(“bert-base-uncased”)</p>
+<p>encoding &#x3D; tokenizer(“Hello, Hugging Face!”)</p>
+<p>print(encoding)</p>
+<p>这会将输入文本 “Hello, Hugging Face!” 转换为模型能够理解的 token 格式，并输出一个包含 token IDs 的字典。</p>
+<p><strong>4.2 自定义 Tokenizer</strong></p>
+<p>如果你想自定义一个 tokenizer，可以使用 tokenizers 库提供的低级 API。你可以选择不同的分词算法（如 BPE、WordPiece 等），并根据自己的语料库训练一个新的 tokenizer。</p>
+<p><strong>创建自定义 BPE Tokenizer</strong>：</p>
+<p>from tokenizers import Tokenizer, models, pre_tokenizers, trainers</p>
+<p><em># 创建一个空的 BPE 模型</em></p>
+<p>tokenizer &#x3D; Tokenizer(models.BPE())</p>
+<p><em># 设置分词器的预处理步骤</em></p>
+<p>tokenizer.pre_tokenizer &#x3D; pre_tokenizers.Whitespace()</p>
+<p><em># 创建一个训练器，设置特殊 token</em></p>
+<p>trainer &#x3D; trainers.BpeTrainer(special_tokens&#x3D;[“[UNK]”, “[CLS]”, “[SEP]”])</p>
+<p><em># 训练 tokenizer</em></p>
+<p>tokenizer.train_from_file(“your_data.txt”, trainer&#x3D;trainer)</p>
+<p><em># 保存模型</em></p>
+<p>tokenizer.save(“custom_tokenizer.json”)</p>
+<p>• 这段代码会使用你的数据（your_data.txt）训练一个 BPE 分词器，并保存为 custom_tokenizer.json 文件。</p>
+<p><strong>4.3 Tokenizer 的高级功能</strong></p>
+<p>• <strong>分词</strong>：</p>
+<p>tokens &#x3D; tokenizer.encode(“Hello, Hugging Face!”)</p>
+<p>print(tokens.tokens)  <em># 输出 token 列表</em></p>
+<p>• <strong>解码</strong>：</p>
+<p>decoded_text &#x3D; tokenizer.decode(tokens.ids)</p>
+<p>print(decoded_text)  <em># 输出原始文本</em></p>
+<p>• <strong>编码和解码批量数据</strong>：</p>
+<p>你可以对多个文本样本进行批量编码和解码：</p>
+<p>texts &#x3D; [“Hello, Hugging Face!”, “I love transformers!”]</p>
+<p>encodings &#x3D; tokenizer(texts, padding&#x3D;True, truncation&#x3D;True, return_tensors&#x3D;”pt”)</p>
+<p>print(encodings)</p>
+<p><strong>5. Inference API (推理 API)</strong></p>
+<p>Hugging Face 提供了一个强大的推理 API，用户可以通过简单的 HTTP 请求将数据传给在线模型，获取推理结果。这对于没有自己训练模型的用户，或者希望快速部署模型的用户非常有用。</p>
+<p><strong>5.1 通过 Transformers 库使用推理 API</strong></p>
+<p>Hugging Face 提供了一个简便的 pipeline API，用于快速进行推理。你只需要传入模型的名称和任务类型，pipeline 会自动选择合适的模型和 tokenizer，并进行推理。</p>
+<p><strong>使用方法</strong>：</p>
+<p>• 假设你想进行文本生成：</p>
+<p>from transformers import pipeline</p>
+<p>generator &#x3D; pipeline(“text-generation”, model&#x3D;”gpt2”)</p>
+<p>result &#x3D; generator(“Once upon a time”, max_length&#x3D;50)</p>
+<p>print(result)</p>
+<p>• 你可以指定其他任务，如文本分类、命名实体识别等：</p>
+<p>classifier &#x3D; pipeline(“sentiment-analysis”)</p>
+<p>print(classifier(“I love Hugging Face!”))</p>
+<p><strong>5.2 通过 HTTP 调用推理 API</strong></p>
+<p>如果你不想直接使用 transformers 库，也可以通过 HTTP 请求直接调用 Hugging Face 提供的 API。这对于开发 Web 服务或集成其他系统非常有用。</p>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li><p>在 Hugging Face Hub 上找到你需要的模型，并获取 API Token。</p>
+</li>
+<li><p>使用 HTTP 请求调用模型 API。</p>
+</li>
+</ol>
+<p><strong>示例</strong>：</p>
+<p>• 使用 curl 调用推理 API：</p>
+<p>curl -X POST <a target="_blank" rel="noopener" href="https://api-inference.huggingface.co/models/gpt2">https://api-inference.huggingface.co/models/gpt2</a> \</p>
+<p>     -H “Authorization: Bearer YOUR_API_TOKEN” \</p>
+<p>     -d ‘{“inputs”: “Once upon a time”}’</p>
+<p>• 你也可以在 Python 中使用 requests 发送 POST 请求：</p>
+<p>import requests</p>
+<p>headers &#x3D; {“Authorization”: “Bearer YOUR_API_TOKEN”}</p>
+<p>data &#x3D; {“inputs”: “Once upon a time”}</p>
+<p>response &#x3D; requests.post(“<a target="_blank" rel="noopener" href="https://api-inference.huggingface.co/models/gpt2">https://api-inference.huggingface.co/models/gpt2</a>“, headers&#x3D;headers, json&#x3D;data)</p>
+<p>print(response.json())</p>
+<p><strong>5.3 推理 API 的高级功能</strong></p>
+<p>• <strong>批量推理</strong>：你可以一次性发送多个输入进行批量推理。</p>
+<p>• <strong>自定义参数</strong>：你可以根据需要调整推理参数，例如生成的文本长度、温度、top-k 采样等。</p>
+<p><strong>6. Accelerate 库</strong></p>
+<p>accelerate 是 Hugging Face 提供的一个用于加速模型训练和推理的库，特别适用于大规模训练任务。它简化了在多设备（如 GPU 和 TPU）上并行训练和分布式训练的复杂性。你可以通过它来轻松地在多个设备之间分配任务，提高计算效率。</p>
+<p><strong>6.1 安装 Accelerate</strong></p>
+<p>首先，你需要安装 accelerate 库：</p>
+<p>pip install accelerate</p>
+<p><strong>6.2 简化多设备训练</strong></p>
+<p>accelerate 可以帮助你自动管理多 GPU 或多机器训练，并且可以通过简单的命令运行模型训练。它支持多种设备类型，包括 CPU、GPU 和 TPU。</p>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>在训练脚本中，首先导入 Accelerator 类：</li>
+</ol>
+<p>from accelerate import Accelerator</p>
+<ol start="2">
+<li>创建 Accelerator 实例并设置训练过程：</li>
+</ol>
+<p>accelerator &#x3D; Accelerator()</p>
+<ol start="3">
+<li>使用 accelerator.prepare() 来自动准备模型、优化器和数据加载器：</li>
+</ol>
+<p>model, optimizer, train_dataloader &#x3D; accelerator.prepare(model, optimizer, train_dataloader)</p>
+<ol start="4">
+<li>然后，你可以像平常一样进行训练，accelerate 会自动处理多设备的同步和调度。</li>
+</ol>
+<p><strong>示例</strong>：使用 accelerate 进行简单的训练</p>
+<p>from accelerate import Accelerator</p>
+<p>from transformers import AutoModelForSequenceClassification, AutoTokenizer, AdamW</p>
+<p>from datasets import load_dataset</p>
+<p><em># 初始化 Accelerator</em></p>
+<p>accelerator &#x3D; Accelerator()</p>
+<p><em># 加载数据集和模型</em></p>
+<p>dataset &#x3D; load_dataset(“imdb”)</p>
+<p>model &#x3D; AutoModelForSequenceClassification.from_pretrained(“bert-base-uncased”)</p>
+<p>tokenizer &#x3D; AutoTokenizer.from_pretrained(“bert-base-uncased”)</p>
+<p><em># 准备数据</em></p>
+<p>train_dataset &#x3D; dataset[“train”].map(lambda x: tokenizer(x[“text”], padding&#x3D;True, truncation&#x3D;True), batched&#x3D;True)</p>
+<p>train_dataloader &#x3D; torch.utils.data.DataLoader(train_dataset, batch_size&#x3D;8)</p>
+<p><em># 初始化优化器</em></p>
+<p>optimizer &#x3D; AdamW(model.parameters(), lr&#x3D;5e-5)</p>
+<p><em># 准备所有内容</em></p>
+<p>model, optimizer, train_dataloader &#x3D; accelerator.prepare(model, optimizer, train_dataloader)</p>
+<p><em># 训练过程</em></p>
+<p>for epoch in range(3):</p>
+<p>    model.train()</p>
+<p>    for batch in train_dataloader:</p>
+<p>        optimizer.zero_grad()</p>
+<p>        inputs &#x3D; {key: batch[key].to(accelerator.device) for key in batch}</p>
+<p>        labels &#x3D; inputs.pop(“label”)</p>
+<p>        outputs &#x3D; model(**inputs, labels&#x3D;labels)</p>
+<p>        loss &#x3D; outputs.loss</p>
+<p>        accelerator.backward(loss)</p>
+<p>        optimizer.step()</p>
+<p>    print(f”Epoch {epoch} completed”)</p>
+<p>通过使用 accelerate，你可以轻松地在多设备上进行训练，不需要手动编写复杂的分布式训练代码。accelerate 处理了数据并行、梯度累积等方面的内容。</p>
+<p><strong>6.3 并行推理</strong></p>
+<p>accelerate 还支持推理时的多设备加速。例如，如果你有多个 GPU，并希望将推理负载分配到多个设备上，可以使用 accelerate 来加速推理。</p>
+<p>from accelerate import Accelerator</p>
+<p>from transformers import AutoModelForSequenceClassification, AutoTokenizer</p>
+<p>accelerator &#x3D; Accelerator()</p>
+<p>model &#x3D; AutoModelForSequenceClassification.from_pretrained(“bert-base-uncased”)</p>
+<p>tokenizer &#x3D; AutoTokenizer.from_pretrained(“bert-base-uncased”)</p>
+<p><em># 准备模型和 tokenizer</em></p>
+<p>model, tokenizer &#x3D; accelerator.prepare(model, tokenizer)</p>
+<p><em># 推理</em></p>
+<p>inputs &#x3D; tokenizer(“Hello, Hugging Face!”, return_tensors&#x3D;”pt”)</p>
+<p>inputs &#x3D; {key: value.to(accelerator.device) for key, value in inputs.items()}</p>
+<p>outputs &#x3D; model(**inputs)</p>
+<p><strong>7. Hugging Face Spaces</strong></p>
+<p>Hugging Face Spaces 是一个用于托管和分享机器学习模型和应用的平台。你可以在 Hugging Face Spaces 上创建、部署和分享你的机器学习应用，支持通过 Streamlit、Gradio 等库快速搭建交互式界面。</p>
+<p><strong>7.1 创建 Hugging Face Spaces</strong></p>
+<p>Hugging Face Spaces 允许用户通过简单的代码和界面，快速构建 Web 应用来展示模型的推理能力。你可以选择使用 Gradio 或 Streamlit 来构建应用界面。</p>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li><p>登录 Hugging Face 账户并创建一个 Space 页面。</p>
+</li>
+<li><p>在 Space 中创建一个应用，可以选择 Gradio 或 Streamlit 框架。</p>
+</li>
+</ol>
+<p><strong>示例：使用 Gradio 创建交互式界面</strong>：</p>
+<p>pip install gradio</p>
+<p>然后，创建一个简单的 Gradio 应用来展示模型：</p>
+<p>import gradio as gr</p>
+<p>from transformers import pipeline</p>
+<p><em># 加载预训练模型</em></p>
+<p>classifier &#x3D; pipeline(“sentiment-analysis”)</p>
+<p><em># 创建 Gradio 界面</em></p>
+<p>def predict(text):</p>
+<p>    return classifier(text)</p>
+<p><em># 设置界面</em></p>
+<p>interface &#x3D; gr.Interface(fn&#x3D;predict, inputs&#x3D;”text”, outputs&#x3D;”json”)</p>
+<p><em># 启动应用</em></p>
+<p>interface.launch()</p>
+<p>这段代码创建了一个简单的文本分类应用，用户可以输入文本，应用会返回该文本的情感分析结果。</p>
+<p><strong>7.2 使用 Streamlit 创建交互式界面</strong></p>
+<p>Streamlit 也是一个非常流行的 Python 库，用于快速创建 Web 应用。你可以在 Hugging Face Spaces 中使用 Streamlit 构建应用。</p>
+<p>pip install streamlit</p>
+<p>然后，创建一个简单的应用：</p>
+<p>import streamlit as st</p>
+<p>from transformers import pipeline</p>
+<p><em># 加载模型</em></p>
+<p>classifier &#x3D; pipeline(“sentiment-analysis”)</p>
+<p><em># 创建 Streamlit 应用</em></p>
+<p>st.title(“Sentiment Analysis”)</p>
+<p>text_input &#x3D; st.text_area(“Enter text:”)</p>
+<p>if text_input:</p>
+<p>    result &#x3D; classifier(text_input)</p>
+<p>    st.write(result)</p>
+<p>然后，通过 streamlit run 启动应用：</p>
+<p>streamlit run app.py</p>
+<p>这样你就可以通过 Streamlit 创建一个简单的应用，用户输入文本后即可看到情感分析的结果。</p>
+<p><strong>7.3 分享和部署应用</strong></p>
+<p>一旦你创建了 Hugging Face Space，你可以分享它的链接给其他人，让他们也能访问和使用你的应用。Hugging Face 会为每个 Space 提供一个独立的 URL，你可以将其嵌入到文档、博客等地方。</p>
+<p>• 在 Space 页面上，你可以选择公开或私有你的应用。如果你选择公开，其他人也可以访问并使用这个应用。</p>
+<p>• 你也可以在应用中上传自己的数据或模型文件，使得应用更加丰富和个性化。</p>
+<p><strong>8. Hugging Face 文档和社区支持</strong></p>
+<p>Hugging Face 提供了丰富的文档和社区支持，帮助开发者解决问题并学习如何使用 Hugging Face 的工具。</p>
+<p><strong>8.1 官方文档</strong></p>
+<p>• <a target="_blank" rel="noopener" href="https://huggingface.co/docs">Hugging Face 官方文档</a>：包含了从模型加载、训练到部署等各个方面的详细说明，涵盖了各类 API 和功能的使用示例。</p>
+<p><strong>8.2 Hugging Face 论坛</strong></p>
+<p>• <a target="_blank" rel="noopener" href="https://discuss.huggingface.co/">Hugging Face 论坛</a>：你可以在这个论坛上向社区提问，分享经验，讨论最新的研究成果。论坛中有许多来自不同领域的专家，他们会回答你的问题，提供帮助。</p>
+<p><strong>8.3 Hugging Face Discord</strong></p>
+<p>• Hugging Face 还提供了一个 <a target="_blank" rel="noopener" href="https://discord.gg/huggingface">Discord 频道</a>，你可以在这里与其他开发者和研究人员实时交流。</p>
+<p><strong>总结</strong></p>
+<p>我们已经详细探讨了 Hugging Face 的许多功能，包括：</p>
+<ol>
+<li><p><strong>Accelerate 库</strong>：帮助在多个设备上加速训练和推理，简化分布式训练。</p>
+</li>
+<li><p><strong>Hugging Face Spaces</strong>：用于创建和部署机器学习应用，支持 Gradio 和 Streamlit 界面，方便展示和分享模型。</p>
+</li>
+<li><p><strong>文档和社区支持</strong>：提供丰富的文档、论坛和实时交流平台，帮助开发者解决问题。</p>
+</li>
+</ol>
+<p>通过使用 Hugging Face 提供的工具和平台，你可以高效地构建、训练、部署和分享机器学习模型。希望这些内容能对你有所帮助，如果有任何问题或需要进一步的示例，随时告诉我！</p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=http://example.com/2024/11/28/huggingface/%20Duffy%20hugging face 抱抱脸"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/12/01/transformer/" title="all you need is all you need"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: all you need is all you need</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2024/11/13/hot100/" title="力扣Hot100">Next post: 力扣Hot100&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2025&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">Kai</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

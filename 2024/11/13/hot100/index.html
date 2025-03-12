@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>力扣Hot100 · Duffy</title><meta name="description" content="001 两数之和题目概述给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。
+你可以按任意顺序返回答案。
+思路方法1 暴力很直接的搜索，"><meta name="og:description" content="001 两数之和题目概述给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。
+你可以按任意顺序返回答案。
+思路方法1 暴力很直接的搜索，"><meta name="twitter:site" content="Duffy"><meta name="twitter:title" content="力扣Hot100"><meta name="twitter:card" content="summary"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/">Keep going</a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/">思考｜记录</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/tags">Tags</a></li><li><a href="/about/about.html"></a></li><li><a href="/about/index.html">about</a></li><li><a href="/about/heureux.html"></a></li><li class="soc"><a href="https://github.com/heureux831" target="_blank" rel="noopener noreferrer" aria-label="Github"><i class="fa fa-github">&nbsp;</i></a><a href="http://example.com/atom.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2025&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">Kai</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>力扣Hot100</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2024-11-13</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a class="a-tag" href="/tags/duffy/" title="duffy">duffy</a><span>&nbsp;</span></span></p><p class="post-abstract"><h2 id="001-两数之和"><a href="#001-两数之和" class="headerlink" title="001 两数之和"></a>001 两数之和</h2><h3 id="题目概述"><a href="#题目概述" class="headerlink" title="题目概述"></a>题目概述</h3><p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em>  的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。</p>
+<p>你可以按任意顺序返回答案。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="方法1-暴力"><a href="#方法1-暴力" class="headerlink" title="方法1 暴力"></a>方法1 暴力</h4><p>很直接的搜索，第一次遍历数组找到<code>nums[i]</code>，第二次是找<code>target-nuns[i]</code>，暴力搜索。</p>
+<p>时间复杂度$O(n^2)$ ，空间复杂度$O(1)$ </p>
+<h4 id="方法2-哈希表"><a href="#方法2-哈希表" class="headerlink" title="方法2 哈希表"></a>方法2 哈希表</h4><p>这个问题归根到底是通过<code>num[i]</code>来找到是否有<code>target-nuns[i]</code>这个值，在方法1中，我们是通过遍历来寻找这个值，那我们也许就考虑到使用一个数据结构来加快搜索，哈希表！所以方法2是通过哈希表来加速方法1中的暴力。</p>
+<p>时间复杂度$O(n)$ ，空间复杂度$O(n)$ </p>
+<h4 id="方法3-双指针"><a href="#方法3-双指针" class="headerlink" title="方法3 双指针"></a>方法3 双指针</h4><p>如果假设这个数组是有序的，那么我们就可以设置两个指针，一个从头开始，一个从末尾往前找，最终只需要遍历一次数组就可以找到。</p>
+<p>但是当前数组是无序的，没有那么好的条件。</p>
+<p>所以我们可以考虑通过创建副本数组，然后对其排序，用于查找对应值在原数组的位置。</p>
+<p>时间复杂度$O(nlogn)$ ，空间复杂度$O(n)$ </p>
+<h2 id="002-字母异位词分组"><a href="#002-字母异位词分组" class="headerlink" title="002 字母异位词分组"></a>002 字母异位词分组</h2><h3 id="题目概述-1"><a href="#题目概述-1" class="headerlink" title="题目概述"></a>题目概述</h3><p>49题</p>
+<p>给你一个字符串数组，请你将 <strong>字母异位词</strong> 组合在一起。可以按任意顺序返回结果列表。</p>
+<p><strong>字母异位词</strong> 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<p><strong>示例:</strong></p>
+<p><strong>输入:</strong> <code>strs = [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code></p>
+<p><strong>输出:</strong> <code>[[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]</code></p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>字母异位词，也就是说组成单词的字母相同。那我们可以考虑有几个不同的字母，以及对应字母出现的次数。比如eat和tea，其中字母组成和各字母个数是相同的，所以我们可以放到一起。</p>
+<p>那问题就转换为找相同字母组成与各字母个数的字符串集。</p>
+<p>首先我们先看如何表示一个字符串的字母组成和各字母个数，这是划分不同类的判别标准。<br>我们可以考虑转换顺序把所有的字符串中字母按照同样的顺序排列，比如把其中的字母按照字母序排列。比如eat可以变为aet，而此时的tea也可以变为aet，判别相同，然后划分为同一类。<br>然后根据字符串的表示来分类。</p>
+<p>这里我们用到了查找，即根据当前的判别标准来查找其他的是否有相同的类别。所以可以采用哈希表，即为一一对应关系，类别特征对应有相同特征的字符串集合。</p>
+<h4 id="方法1-按字母序排列"><a href="#方法1-按字母序排列" class="headerlink" title="方法1 按字母序排列"></a>方法1 按字母序排列</h4><p>把字符串中的字符重新排列，得到判别标准。</p>
+<p>比如<code>tea</code>，得到<code>aet</code>；比如<code>basste</code>，得到<code>abetss</code>；然后插入哈希表，如果不存在则创建映射关系，存在则插入映射的字符串集数组中。</p>
+<h4 id="方法2-按字母序分类以及数量排列"><a href="#方法2-按字母序分类以及数量排列" class="headerlink" title="方法2 按字母序分类以及数量排列"></a>方法2 按字母序分类以及数量排列</h4><p>每个字符串创建一个String，其中为字母和出现次数的排列。比如<code>basste</code>，可以化为<code>a1b1e1t1s2</code>，这个标准对于任意不同字母排列的字符串是唯一的。然后插入哈希表，如果不存在则创建映射关系，存在则插入映射的字符串集数组中。</p>
+<h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><p>关键点是找到同类字符集和不同字符集的特征，然后根据特征对其分类。</p>
+<h2 id="003-最长连续序列"><a href="#003-最长连续序列" class="headerlink" title="003 最长连续序列"></a>003 最长连续序列</h2><h3 id="题目概述-2"><a href="#题目概述-2" class="headerlink" title="题目概述"></a>题目概述</h3><p>相当于</p>
+<h2 id="004-移动零"><a href="#004-移动零" class="headerlink" title="004 移动零"></a>004 移动零</h2><h3 id="题目概述-3"><a href="#题目概述-3" class="headerlink" title="题目概述"></a>题目概述</h3><p>把数组中的零都移到数组末尾，其余数字相对顺序不变。要求原地处理数组。</p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>把零都移到末尾，关键是先找到零的位置，然后进行移动，移动同时需要确认移动的位置以及方式。</p>
+<p>首先找到零的位置，需求是移到数组末尾，那么我们可以从左到右一次寻找，或者从右往左依次寻找，我感觉从两侧开始找都可以的，但是按照一般经验来说，从左往右更符合常理。</p>
+<p>首先从右往左定位第一个零的位置，此时我们找到了需要移动的零的位置，接下来我们需要找到这个零应该往后移到哪里。</p>
+<p>由于要求其余数字相对位置不变，选择选定的零后的第一个非零元素是最合适的。</p>
+<p>所以我们就可以考虑使用双指针，一个指向零，一个指向零后第一个非零元素。</p>
+<p>所以本题考虑使用双指针。</p>
+<h3 id="要点-1"><a href="#要点-1" class="headerlink" title="要点"></a>要点</h3><p>理清题目要求，首先找到零，然后找移动的位置，这两个分别代表一个指针指向的内容。</p>
+<h2 id="005-能装最多水的容器"><a href="#005-能装最多水的容器" class="headerlink" title="005 能装最多水的容器"></a>005 能装最多水的容器</h2><h3 id="题目概述-4"><a href="#题目概述-4" class="headerlink" title="题目概述"></a>题目概述</h3><p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code> 。</p>
+<p>找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p>
+<p>返回容器可以储存的最大水量。</p>
+<p>举例<br>对于数组<code>[1,8,6,2,5,4,8,3,7]</code><br>输出<code>49</code> </p>
+<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>考虑这个问题，我们需要确定两个索引值，即left、right，即求$|right-left| * |height[left] - height[right]|$的最大值。</p>
+<p>比如一个0开始、一个从最后一个值开始判断。</p>
+<p>那么从</p>
+<h2 id="006-三数之和"><a href="#006-三数之和" class="headerlink" title="006 三数之和"></a>006 三数之和</h2><h3 id="题目概述-5"><a href="#题目概述-5" class="headerlink" title="题目概述"></a>题目概述</h3><p>给定一个数组，找出其中三个和为零的数的集合。返回数的集合，不包含重复解。</p>
+<h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>想象一下，如果我们用三层for循环遍历，那就是需要$O(n^3)$时间复杂度，并且我们还需要去重，时间复杂度会更高！</p>
+<p>如果我们假定结果 a+b+c&#x3D;0，那么不去重就可能遇到这种情况，$[a,b,c] [b,a,c] [c,a,b]$，这三个其实是同一个答案。那么我们如果事先假定$a\leq b\leq c$呢，那么我们得到的结果就不会重复。并且题目中并没有让我们给出下标，而是数的集合，因此我们可以先对数组进行排序。</p>
+<p>对数组进行排序后，我们就得到了从小到大的一维数组。然后我们可以进行最初的for循环，此时我们可以不用担心重复过多的情况！</p>
+<p>我们需要在对数组进行遍历的情况下，对已经有重复值的索引进行跳过，比如对于排序好的数组$[-1,-1,0,1,2,3]$，在i,j,k遍历中，i首次遍历到索引0的-1处，j,k在后方找到对应结果$[-1,-1,2] [-1,0,1]$，然后i再遍历到索引1的-1处，此时能找到的结果必定是在索引0处找到的结果的子集，因为i的取值不变的情况下，j,k的取值区间变小，因此结果是更少的！</p>
+<p>同样如果在找到对应的i,j,k时，j,k对应的下一个取值处的值与之前相同，那么肯定得到的结果和上一步相同。因此我们在这个地方也要处理。</p>
+<h2 id="008-无重复字符的最长子串"><a href="#008-无重复字符的最长子串" class="headerlink" title="008 无重复字符的最长子串"></a>008 无重复字符的最长子串</h2><h3 id="题目概述-6"><a href="#题目概述-6" class="headerlink" title="题目概述"></a>题目概述</h3><p>寻找一个子串，其中无重复字符，求其长度。</p>
+<p>比如<code>&quot;abacbade&quot;</code>，可以得到</p>
+<p><strong>a</strong></p>
+<p><strong>ab</strong></p>
+<p>a<strong>ba</strong></p>
+<p>a<strong>bac</strong></p>
+<p>ab<strong>acb</strong></p>
+<p>aba<strong>cba</strong></p>
+<p>aba<strong>cbad</strong></p>
+<p>aba<strong>cbade</strong></p>
+<p>其中加深色的子串中无重复字符。</p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>我们可以看到我们从左往右扫描的过程，一直在维护一个区间，这个区间是连续的，我们每次往后扩展的过程中，我们发现，当遇到一个尚未存在的词，我们可以往后增加区间长度，如果我们遇到一个已经存在的词，我们就需要把区间的左端点往后移，直到符合要求。</p>
+<p>这里我们需要考虑两个东西：<br>1.区间范围的定义 右进左出<br>2.如何判断是否重复</p>
+<p>我们从1中可以看到，这不就是队列吗？一头进，一头出。而2中我们可以看到，这就是和Set数据结构很类似，即不重复元素的集合。</p>
+<p>而这个方法有一个大家更常叫的名字：<strong>滑动窗口</strong>。即我们维护一个区间，这个区间范围随着我们处理，区间的右端点不断右移，左端点根据情况右移，一般而言符合情况的数就在区间范围内。（说到底就是滑动窗口是满足最后一个节点是右端点并且符合题意的最大序列）</p>
+<p>因此我们在往后移动的过程中，每次发现一个新字母，就观察其是否已经存在于窗口范围内，如果不存在，符合情况，则窗口向右扩展；如果存在，那么不符合情况，因此我们需要依次从窗口左端右移，去除元素，直至发现那个存在的元素，然后把这个元素去掉即左端再次右移，最终把新元素添加入窗口。</p>
+<p>最终我们在不断右移的过程中，发现最长的序列长度。</p>
+<h2 id="009-和为k的子数组"><a href="#009-和为k的子数组" class="headerlink" title="009 和为k的子数组"></a>009 和为k的子数组</h2><h3 id="题目概述-7"><a href="#题目概述-7" class="headerlink" title="题目概述"></a>题目概述</h3><p>对于某数组，求其中和为k的子数组个数，比如<code>[1,-1,0]</code>，<code>k = 0</code>，那么存在<code>[-1,1]、[1,1,0]</code>，这两种情况。</p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>和为k，如果我们暴力求解，需要$O(n^3)$的复杂度，遍历区间范围，然后再对范围内的数组进行求和。遍历范围$O(n^2)$，求和$O(n)$，结合便是$O(n^3)$。</p>
+<p>对于暴力方法中的步骤，我们可以先优化求和方法，即我们并不需要每次都遍历数组全部数字，我们可以考虑使用前缀合方法来求和。</p>
+<p>比如对于原始数组<code>nums</code>，我们求的<code>pre</code>前缀合数组，那么我们需要求第<code>i</code>到第<code>j</code>位的子数组和，我们只需要计算<code>pre[j] - pre[i-1]</code>即可得到。</p>
+<p>那么问题就转换为，遍历<code>i</code>、<code>j</code>，然后找到符合<code>pre[j] - pre[i-1] == k</code>的结果个数。</p>
+<p>时间复杂度降了一个等级。</p>
+<p>如果继续思考，外层遍历i，内层遍历j，即我们需要在<code>[i,j]</code>范围中找到满足题意的子数组个数，那么我们就是根据pre[j]，来找到一个pre使得<code>pre[j] - pre == k</code>，所以问题又转化为查找数组中是否存在<code>pre[j] - k</code>。所以呢，我们可以继续使用哈希查找来再次优化。</p>
+<p>即我们把前缀数组放入哈希表，但是存在一个问题，如果有多个pre元素相同，那么我们应该如何表示呢？所以在这里我们不能使用HashSet，我们需要使用HashMap来表示存在元素重复的情况，key对应的是pre值，value对应的存在个数。如果存在多个，那么我们可以直接加对应个数。</p>
+<p>由于元素存在顺序关系，即<code>pre[j] - pre[i]</code>表示前缀合需要满足<code>j&gt;=i&gt;=0</code>，所以我们可以在遍历的过程中先检查再把元素加入哈希表。如果<code>pre==k</code>，那么我们也需要事先把<code>(0,1)</code>加入map中。</p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=http://example.com/2024/11/13/hot100/%20Duffy%20力扣Hot100"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2024/11/28/huggingface/" title="hugging face 抱抱脸"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: hugging face 抱抱脸</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2024/11/11/Low-Rank-Adaptation/" title="LoRA微调">Next post: LoRA微调&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2025&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">Kai</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
