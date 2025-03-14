@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-12-03T02:26:23.077Z</updated>
+  <updated>2025-03-14T16:18:07.020Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>RLHF: 基于人类偏好的强化学习</title>
+    <link href="http://example.com/2025/03/15/RLHF/"/>
+    <id>http://example.com/2025/03/15/RLHF/</id>
+    <published>2025-03-14T16:00:00.000Z</published>
+    <updated>2025-03-14T16:18:07.020Z</updated>
+    
+    
+    <summary type="html">RLHF</summary>
+    
+    
+    <content src="http://example.com/2024.png" type="image"/>
+    
+    
+    
+    <category term="LLM" scheme="http://example.com/tags/LLM/"/>
+    
+    <category term="transformer" scheme="http://example.com/tags/transformer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>all you need is all you need</title>
     <link href="http://example.com/2024/12/01/transformer/"/>
     <id>http://example.com/2024/12/01/transformer/</id>
     <published>2024-11-30T16:00:00.000Z</published>
-    <updated>2024-12-03T02:26:23.077Z</updated>
+    <updated>2025-03-14T16:07:49.022Z</updated>
     
     
     <summary type="html">你需要的就是你需要的，让我们看看什么是transformer吧</summary>
@@ -31,9 +52,9 @@
     
     
     
-    <category term="nlp" scheme="http://example.com/tags/nlp/"/>
-    
     <category term="transformer" scheme="http://example.com/tags/transformer/"/>
+    
+    <category term="nlp" scheme="http://example.com/tags/nlp/"/>
     
   </entry>
   
@@ -103,7 +124,7 @@
     <link href="http://example.com/2024/11/11/dive-into-git/"/>
     <id>http://example.com/2024/11/11/dive-into-git/</id>
     <published>2024-11-10T16:00:00.000Z</published>
-    <updated>2024-11-11T12:14:56.589Z</updated>
+    <updated>2025-03-14T16:07:55.835Z</updated>
     
     
     <summary type="html">怎么使用git？不仅限于简单使用</summary>
@@ -141,14 +162,14 @@
   </entry>
   
   <entry>
-    <title>静态博客</title>
-    <link href="http://example.com/2024/06/01/staticsites/"/>
-    <id>http://example.com/2024/06/01/staticsites/</id>
+    <title>2024 Post</title>
+    <link href="http://example.com/2024/06/01/index/"/>
+    <id>http://example.com/2024/06/01/index/</id>
     <published>2024-05-31T16:00:00.000Z</published>
-    <updated>2024-11-11T17:01:06.570Z</updated>
+    <updated>2024-11-13T15:31:40.475Z</updated>
     
     
-    <summary type="html">如何构建静态博客</summary>
+    <summary type="html">This a dummy post written in the year 2024 (with multiple authors).</summary>
     
     
     <content src="http://example.com/2024.png" type="image"/>
@@ -162,14 +183,14 @@
   </entry>
   
   <entry>
-    <title>2024 Post</title>
-    <link href="http://example.com/2024/06/01/index/"/>
-    <id>http://example.com/2024/06/01/index/</id>
+    <title>静态博客</title>
+    <link href="http://example.com/2024/06/01/staticsites/"/>
+    <id>http://example.com/2024/06/01/staticsites/</id>
     <published>2024-05-31T16:00:00.000Z</published>
-    <updated>2024-11-13T15:31:40.475Z</updated>
+    <updated>2024-11-11T17:01:06.570Z</updated>
     
     
-    <summary type="html">This a dummy post written in the year 2024 (with multiple authors).</summary>
+    <summary type="html">如何构建静态博客</summary>
     
     
     <content src="http://example.com/2024.png" type="image"/>
