@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string
+  style?: string
+}
+
+const { class: className, style } = Astro.props
+---
+<div class="card-base p-6 mb-4">
+
+        <div class="card-base p-1 mb-0.1">
+            <script is:inline></script>
+            <div class="flex items-center gap-2"> </div>
+            <h1 class="text-2xl font-bold text-black/90 dark:text-white/90">Welcome to my blog,👋</h1>
+        </div>
+</div>
