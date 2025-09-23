@@ -1,5 +1,5 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+My name is Ray🌄.
 
 ::github{repo="saicaca/fuwari"}
 
