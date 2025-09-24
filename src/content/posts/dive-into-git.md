@@ -4,7 +4,7 @@ description: 怎么使用git？不仅限于简单使用
 published: 2024-11-11
 tags:
   - git
-category: DEVTools
+category: DevTools
 ---
 git，可以说既熟悉又陌生。大家日常使用可能仅限于个人开发，即使用`git clone url`, `git add .`, `git commit -m 'waibiwaibi'`等。但是如果涉及到 
 
