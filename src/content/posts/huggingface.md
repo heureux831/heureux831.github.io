@@ -5,6 +5,7 @@ published: 2024-11-28
 tags:
   - LLM
   - huggingface
+category: NLP
 ---
 
 ## 什么是hugging face？🤔

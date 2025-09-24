@@ -4,6 +4,7 @@ description: 如何构建静态博客
 published: 2024-06-01
 tags:
   - blog
+category: Others
 ---
 ## 介绍
 

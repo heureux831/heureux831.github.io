@@ -2,7 +2,10 @@
 title: transformer
 description: 你需要的就是你需要的，让我们看看什么是transformer吧
 published: 2024-12-01
-tags: ["NLP", "transformer"]
+tags:
+  - NLP
+  - transformer
+category: NLP
 ---
 # Transformer
 

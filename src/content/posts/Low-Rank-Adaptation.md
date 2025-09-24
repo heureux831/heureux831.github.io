@@ -5,6 +5,7 @@ published: 2024-11-11
 tags:
   - LLM
   - finetuning
+category: NLP
 ---
 现在的大模型动辄几十、上百亿参数，如果我们想要对模型进行微调，放到本地一般而言很少有足够的显存。
 

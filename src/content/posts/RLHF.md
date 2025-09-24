@@ -5,6 +5,7 @@ published: 2025-03-15
 tags:
   - LLM
   - transformer
+category:
 ---
 RLHF是"Reinforcement Learning from Human Feedback"的缩写，中文意思是“基于人类反馈的强化学习”。这是一种结合了强化学习和人类反馈的机器学习方法，旨在训练智能体（agent）在特定任务上表现得更好。以下是RLHF的一些关键特点：
 
